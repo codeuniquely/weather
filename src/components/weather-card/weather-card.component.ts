@@ -4,8 +4,8 @@ import { WeatherDay } from 'src/interfaces';
 @Component({
   selector: 'weather-card',
   standalone: true,
-  templateUrl: './weather-card.component.html',
-  styleUrls: ['./weather-card.component.css']
+  styleUrls: ['./weather-card.component.css'],
+  templateUrl: './weather-card.component.html'
 })
 export class WeatherCardComponent {
   @Input() data: WeatherDay | null = null;

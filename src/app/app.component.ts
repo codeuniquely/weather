@@ -1,7 +1,7 @@
-import { Component, effect, inject } from '@angular/core';
-import { HeaderComponent } from 'src/components/header/header.component';
+import { Component } from '@angular/core';
 import { CityInputComponent } from 'src/components/city-input/city-input.component';
 import { DayListComponent } from 'src/components/day-list/day-list.component';
+import { HeaderComponent } from 'src/components/header/header.component';
 
 @Component({
   imports: [CityInputComponent, DayListComponent, HeaderComponent],

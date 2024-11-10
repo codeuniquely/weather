@@ -1,6 +1,6 @@
 import { Component, computed, effect, inject } from '@angular/core';
-import { WeatherDay } from 'src/interfaces';
 import { WeatherCardComponent } from 'src/components/weather-card/weather-card.component';
+import { WeatherDay } from 'src/interfaces';
 import { ShareDataService } from 'src/services/share-data.service';
 
 @Component({

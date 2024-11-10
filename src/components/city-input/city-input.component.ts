@@ -5,11 +5,10 @@ import { WeatherDataService } from 'src/services/weather-data.service';
 
 @Component({
   imports:[FormsModule],
-  // [ngModelOptions]="{standalone: true}"
   selector: 'city-input',
   standalone: true,
-  templateUrl: './city-input.component.html',
-  styleUrls: ['./city-input.component.css']
+  styleUrls: ['./city-input.component.css'],
+  templateUrl: './city-input.component.html'
 })
 export class CityInputComponent {
   city: string = '';
@@ -18,16 +17,10 @@ export class CityInputComponent {
   weatherDataService = inject(WeatherDataService);
 
   onSubmit() {
-    console.log('HELLO');
-
-    // this.sharedDataService.setCity(this.city);
     if (!this.city.trim()) {
+      this.sharedDataService.setWeather({} as any);
       return;
     }
-
-
-    //
-    console.log('GET SOME DATA');
 
     this.weatherDataService
       .getLocationWeather(this.city)
