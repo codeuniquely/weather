@@ -1,0 +1,9 @@
+header {
+  width: 100%;
+}
+header h2 {
+  text-align: center;
+  font-size: 2rem;
+  text-transform: capitalize;
+  color: red;
+}

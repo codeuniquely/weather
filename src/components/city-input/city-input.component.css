@@ -1,0 +1,16 @@
+.input-group {
+  width: 100%;
+}
+
+button {
+  min-width: 120px;
+}
+
+@media (max-width: 576px) {
+  .input-group input {
+    width: 70%;
+  }
+  .input-group button {
+    width: 30%;
+  }
+}

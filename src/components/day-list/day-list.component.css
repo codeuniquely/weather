@@ -1,0 +1,47 @@
+article {
+  /* max-width: 70rem; */
+  margin: 0 auto;
+  padding: clamp(1rem, 2vw, 3rem);
+  border-radius: 0.5rem 0.5rem 0 0;
+  border: 0.18rem solid lightgrey;
+  overflow-y: scroll;
+  max-height: calc(100% - 100px);
+
+  margin-top: 5rem;
+}
+
+article>*+* {
+  margin-top: 1rem;
+}
+
+dl {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: 2rem;
+}
+
+dl>div {
+  background: #eee;
+  border: 4px solid transparent;
+  border-radius: 0.5rem;
+}
+
+.error,
+.waiting {
+  height: 300px;
+}
+
+.error>div,
+.waiting>div {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.error>div {
+  color: red;
+}

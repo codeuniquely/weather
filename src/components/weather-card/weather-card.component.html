@@ -1,0 +1,22 @@
+<div class="card">
+  @if (data) {
+  <div class="mt-4">
+    <h5 class="title">{{ getFormattedDate(data.datetime) }}</h5>
+  </div>
+  <div class="icon mt-4">
+    <img [src]="getIconUrl(data.icon)" alt="Weather icon">
+  </div>
+  <div class="mt-4">
+    <p class="header">Description</p>
+    <p class="text">{{ data.description }}</p>
+  </div>
+  <div class="mt-4">
+    <p class="header">Temperature</p>
+    <p class="text">{{ data.temp }}</p>
+  </div>
+  <div class="mt-4">
+    <p class="header">Wind Speed</p>
+    <p class="text">{{ data.windspeed }}</p>
+  </div>
+  }
+</div>
