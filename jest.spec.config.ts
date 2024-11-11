@@ -19,7 +19,6 @@ const config = {
 
   coverageProvider: 'v8',
 
-  // '\\.(jpg|jpeg|png)$': `${__dirname}/mock-module.js`,
   moduleNameMapper: {
     '\\.(jpg|jpeg|png)$': '<rootDir>/mock-module.js',
     'src/(.*)$': '<rootDir>/src/$1',
@@ -27,18 +26,6 @@ const config = {
   },
 
   preset: 'jest-preset-angular',
-
-  // reporters: [
-  //   'default',
-  //   // [
-  //   //   '@casualbot/jest-sonar-reporter',
-  //   //   {
-  //   //     relativePaths: true,
-  //   //     outputName: 'sonar-report.xml',
-  //   //     outputDirectory: 'coverage/spec',
-  //   //   },
-  //   // ],
-  // ],
 
   setupFilesAfterEnv: ['<rootDir>/jest.spec.setup.ts'],
 
