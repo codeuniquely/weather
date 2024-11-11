@@ -81,6 +81,7 @@ img[alt]:after {
     height: unset;
     line-height: unset;
     justify-content: unset;
+    height: 100%;
   }
 
   .title-short {
@@ -91,11 +92,21 @@ img[alt]:after {
     display: block;
     text-align: center;
     font-weight: bold;
-    margin-block: 2rem;
+    min-height: 64px;
+    margin-top: 2rem;
+    padding-inline: 10px;
   }
 
   .description {
     display: block;
+  }
+
+  .description .header {
+    padding-top: 1rem
+  }
+
+  .description .text {
+    min-height: unset; /* 200px; */
   }
 
   img {
@@ -115,8 +126,28 @@ img[alt]:after {
   }
 }
 
-@media(min-width: 920px) {
+@media(min-width: 830px) {
+  .title {
+    padding-inline: 20px;
+  }
   .description .text {
     padding-inline: 10px;
+    min-height: 200px;
+  }
+}
+
+@media(min-width: 1060px) {
+  .title {
+    padding-inline: unset;
+  }
+  .description .text {
+    padding-inline: 10px;
+    min-height: 160px;
+  }
+}
+
+@media(min-width: 1440px) {
+  .description .text {
+    min-height: 90px;
   }
 }
