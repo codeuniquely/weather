@@ -6,6 +6,7 @@ article {
   overflow-y: scroll;
   max-height: calc(100% - 100px);
   margin-top: 5rem;
+  container-type: inline-size;
 }
 
 article>*+* {
@@ -15,7 +16,7 @@ article>*+* {
 dl {
   margin: 0;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
   gap: 2rem;
 }
 
@@ -42,4 +43,11 @@ dl>div {
 
 .error>div {
   color: red;
+}
+
+@container (min-width: 720px) {
+  dl {
+    grid-template-rows:unset;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
 }

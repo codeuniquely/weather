@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { ICONS, IMAGE_URL } from 'src/const';
+import { DaysShortFormat, ICONS, IMAGE_URL } from 'src/const';
 import { WeatherDay } from 'src/interfaces';
 
 @Component({
@@ -14,6 +14,11 @@ export class WeatherCardComponent {
   getIconUrl(icon: string) {
     const image = ICONS[icon];
     return `${IMAGE_URL}/${image}`;
+  }
+
+  getFormattedDay(datetime: string) {
+    const day = new Date(datetime).getDay();
+    return DaysShortFormat[day];
   }
 
   getFormattedDate(datetime: string) {

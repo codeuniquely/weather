@@ -1,12 +1,31 @@
 .card {
-  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: row;
   border-radius: 8px;
+
+  height: 64px;
+  line-height: 64px;
+  justify-content: space-around;
+  box-shadow: 0 5px 10px 1px rgba(0, 0, 0, 0.1);
 }
 
-.title {
+.card > .div {
+  width: 92px;
+}
+
+.title-short, title {
   text-align: center;
   font-weight: bold;
-  font-size: 1.5;
+  font-size: 25px;
+}
+
+.title-short {
+  line-height: 64px;
+  width: 92px;
+}
+
+.title, .description {
+  display: none;
 }
 
 .icon {
@@ -16,10 +35,9 @@
 
 img {
   position: relative;
-  width: 92px;
-  min-width: 92px;
+  width: 32px;
+  min-width: 32px;
   aspect-ratio: 1;
-  background: aliceblue;
 }
 
 img[alt]:after {
@@ -37,12 +55,68 @@ img[alt]:after {
   content: attr(alt);
 }
 
-.header {
-  text-align: center;
-  font-weight: bold;
+.header, description {
+  display: none;
 }
 
 .text {
   text-align: center;
   font-weight: lighter;
+  width: 92px;
+}
+
+.temp:after {
+  content: "\00b0 C";
+}
+
+.speed:after {
+  content: "m/s";
+  padding-left: 4px;
+}
+
+@media(min-width: 720px) {
+  .card {
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+    height: unset;
+    line-height: unset;
+    justify-content: unset;
+  }
+
+  .title-short {
+    display: none;
+  }
+
+  .title {
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    margin-block: 2rem;
+  }
+
+  .description {
+    display: block;
+  }
+
+  img {
+    position: relative;
+    width: 92px;
+    min-width: 92px;
+  }
+
+  .header {
+    display: block;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .text {
+    width: unset;
+  }
+}
+
+@media(min-width: 920px) {
+  .description .text {
+    padding-inline: 10px;
+  }
 }
