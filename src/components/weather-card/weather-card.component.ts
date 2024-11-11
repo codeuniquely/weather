@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { ICONS, IMAGE_URL } from 'src/const';
 import { WeatherDay } from 'src/interfaces';
 
 @Component({
@@ -11,7 +12,8 @@ export class WeatherCardComponent {
   @Input() data: WeatherDay | null = null;
 
   getIconUrl(icon: string) {
-    return `http://openweathermap.org/img/wn/${icon}.png`;
+    const image = ICONS[icon];
+    return `${IMAGE_URL}/${image}`;
   }
 
   getFormattedDate(datetime: string) {

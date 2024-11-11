@@ -12,7 +12,6 @@ const config = {
     '<rootDir>/src/mocks',
     '__spec__',
     '__test__',
-    '__vite__',
     'interfaces.ts',
     'main.ts',
     'app.config.ts',
@@ -29,17 +28,17 @@ const config = {
 
   preset: 'jest-preset-angular',
 
-  reporters: [
-    'default',
-    [
-      '@casualbot/jest-sonar-reporter',
-      {
-        relativePaths: true,
-        outputName: 'sonar-report.xml',
-        outputDirectory: 'coverage/spec',
-      },
-    ],
-  ],
+  // reporters: [
+  //   'default',
+  //   // [
+  //   //   '@casualbot/jest-sonar-reporter',
+  //   //   {
+  //   //     relativePaths: true,
+  //   //     outputName: 'sonar-report.xml',
+  //   //     outputDirectory: 'coverage/spec',
+  //   //   },
+  //   // ],
+  // ],
 
   setupFilesAfterEnv: ['<rootDir>/jest.spec.setup.ts'],
 

@@ -1,5 +1,5 @@
 import { Injectable, signal } from '@angular/core';
-import type { APIResponse, LocationInfo, WeatherDay } from 'src/interfaces';
+import type { Any, APIResponse, LocationInfo, WeatherDay } from 'src/interfaces';
 import { daysNotIncludingToday } from 'src/utils';
 
 export type WeatherError = {
@@ -11,14 +11,9 @@ export type WeatherError = {
   providedIn: 'root',
 })
 export class ShareDataService {
-  private city  = signal<string>('')
   private days = signal<Array<WeatherDay>>([]);
   private error = signal<Array<string>>([]);
-  private location = signal<LocationInfo | any>({});
-
-  getCity(): string {
-    return this.city();
-  }
+  private location = signal<LocationInfo | Any>({});
 
   getDays(): Array<WeatherDay> {
     return this.days();
@@ -34,10 +29,6 @@ export class ShareDataService {
 
   getError(): Array<string> {
     return this.error();
-  }
-
-  setCity(city: string) {
-    this.city.update(() => city);
   }
 
   setDataError(error: Error) {

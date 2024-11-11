@@ -1,12 +1,10 @@
 article {
-  /* max-width: 70rem; */
   margin: 0 auto;
   padding: clamp(1rem, 2vw, 3rem);
   border-radius: 0.5rem 0.5rem 0 0;
   border: 0.18rem solid lightgrey;
   overflow-y: scroll;
   max-height: calc(100% - 100px);
-
   margin-top: 5rem;
 }
 

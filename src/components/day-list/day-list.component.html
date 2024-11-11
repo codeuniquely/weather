@@ -2,8 +2,8 @@
   @if (errorCount() !== 0) {
     <div class="error">
       <div>
-        <div data-testid="hero-list-message">Error loading data</div>
-        <div data-testid="hero-list-error">{{ errorMessages }}</div>
+        <div data-testid="list-message">Error loading data</div>
+        <div data-testid="list-error">{{ errorMessages }}</div>
       </div>
     </div>
   } @else if (cardCount() === 0) {
@@ -11,7 +11,7 @@
       <div>Please enter a city or town to see the weather</div>
     </div>
   } @else {
-    <dl data-testid="hero-list-data">
+    <dl data-testid="list-data">
       @for (day of days; track day.datetime) {
         <weather-card [data]=day></weather-card>
       }

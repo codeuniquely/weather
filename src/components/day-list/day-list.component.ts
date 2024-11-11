@@ -23,8 +23,6 @@ export class DayListComponent {
     effect(() => {
       this.errorMessages = this.sharedDataService.getError();
       this.days = this.sharedDataService.getDays();
-
-      console.log('DATA', this.days);
     });
   }
 }

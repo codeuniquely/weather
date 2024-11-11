@@ -1,7 +1,10 @@
 import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Any, APIResponse } from 'src/interfaces';
 import { ShareDataService } from 'src/services/share-data.service';
 import { WeatherDataService } from 'src/services/weather-data.service';
+
+const EmptyWeather:APIResponse = {} as Any;
 
 @Component({
   imports:[FormsModule],
@@ -18,7 +21,7 @@ export class CityInputComponent {
 
   onSubmit() {
     if (!this.city.trim()) {
-      this.sharedDataService.setWeather({} as any);
+      this.sharedDataService.setWeather(EmptyWeather);
       return;
     }
 
@@ -29,7 +32,7 @@ export class CityInputComponent {
         this.sharedDataService.clearDataError();
       })
       .catch(error => {
-        this.sharedDataService.setWeather({} as any);
+        this.sharedDataService.setWeather(EmptyWeather);
         this.sharedDataService.setDataError(error); // 'City not found. Please try again.'
       });
   }
